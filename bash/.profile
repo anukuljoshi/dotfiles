@@ -28,4 +28,7 @@ fi
 
 export PATH=$PATH:/usr/local/go/bin
 
+# cargo
+if [ -f "$HOME/.cargo/env" ]; then
 . "$HOME/.cargo/env"
+fi

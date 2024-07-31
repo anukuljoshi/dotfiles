@@ -130,13 +130,18 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # cargo
+if [ -f "$HOME/.cargo/env" ]; then
 . "$HOME/.cargo/env"
+fi
 
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-export LC_ALL=en_IN.UTF-8
-export LANG=en_IN.UTF-8
-
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/applications/nvim:$PATH
+
+# ignore is wsl
+if ! [[ $(grep -i Microsoft /proc/version) ]]; then
+    export LC_ALL=en_IN.UTF-8
+    export LANG=en_IN.UTF-8
+fi

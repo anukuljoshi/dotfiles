@@ -59,12 +59,10 @@ return {
         config = function ()
             vim.keymap.set("n", "<leader>gv", "<Cmd>:vertical Git<CR>")
             vim.keymap.set("n", "<leader>gh", "<Cmd>:Git<CR>")
+            vim.keymap.set("n", "<leader>gx", "<Cmd>:Gvdiffsplit!<CR>")
+            vim.keymap.set("n", "<leader>xl", "<Cmd>:diffget //2<CR>")
+            vim.keymap.set("n", "<leader>xr", "<Cmd>:diffget //3<CR>")
         end
     },
 
-    {
-        'akinsho/git-conflict.nvim',
-        version = "*",
-        config = true
-    },
 }

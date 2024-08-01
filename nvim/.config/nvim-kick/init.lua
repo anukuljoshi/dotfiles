@@ -37,3 +37,5 @@ vim.cmd.colorscheme 'tokyonight-storm'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4

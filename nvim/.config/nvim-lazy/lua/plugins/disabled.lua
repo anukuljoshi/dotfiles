@@ -8,4 +8,7 @@ return {
     { "folke/which-key.nvim", enabled = false },
     { "folke/noice.nvim", enabled = false },
     { "MunifTanjim/nui.nvim", enabled = false },
+    { "echasnovski/mini.ai", enabled = false},
+    { "echasnovski/mini.hipatterns", enabled = false},
+    { "echasnovski/mini.pairs", enabled = false},
 }

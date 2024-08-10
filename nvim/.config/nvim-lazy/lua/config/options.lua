@@ -42,7 +42,7 @@ vim.opt.colorcolumn = "80"
 
 -- Decrease update time
 vim.opt.updatetime = 250
--- vim.opt.timeoutlen = 1000
+vim.opt.timeoutlen = 1000
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true
@@ -78,3 +78,21 @@ vim.opt.tabstop = 4 -- num:  Number of spaces tabs count for
 vim.opt.spell = true
 
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
+-- lazyvim overrides
+
+-- LazyVim auto format
+vim.g.autoformat = false
+
+-- Set filetype to `bigfile` for files larger than 1.5 MB
+-- Only vim syntax will be enabled (with the correct filetype)
+-- LSP, treesitter and other ft plugins will be disabled.
+-- mini.animate will also be disabled.
+vim.g.bigfile_size = 1024 * 1024 * 1.5 -- 1.5 MB
+
+local opt = vim.opt
+
+opt.completeopt = "menu,menuone,noselect"
+opt.shiftwidth = 4 -- Size of an indent
+opt.tabstop = 4 -- Number of spaces tabs count for
+opt.wrap = true -- Disable line wrap

@@ -76,3 +76,5 @@ vim.opt.softtabstop = 4 -- num:  Number of spaces tabs count for in insert mode
 vim.opt.tabstop = 4 -- num:  Number of spaces tabs count for
 
 vim.opt.spell = true
+
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"

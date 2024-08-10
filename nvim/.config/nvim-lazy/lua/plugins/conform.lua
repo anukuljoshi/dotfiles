@@ -2,12 +2,21 @@ return {
     {
         "williamboman/mason.nvim",
         opts = function(_, opts)
+            -- lsp servers
+            table.insert(opts.ensure_installed, "eslint-lsp")
+            table.insert(opts.ensure_installed, "eslint_d")
+            table.insert(opts.ensure_installed, "typescript-language-server")
+            table.insert(opts.ensure_installed, "pyright")
+            table.insert(opts.ensure_installed, "ruff-lsp")
+            table.insert(opts.ensure_installed, "ruff")
+            table.insert(opts.ensure_installed, "gopls")
+
+            -- formatters
             table.insert(opts.ensure_installed, "stylua")
             table.insert(opts.ensure_installed, "goimports")
-            table.insert(opts.ensure_installed, "gopls")
             table.insert(opts.ensure_installed, "gofumpt")
             table.insert(opts.ensure_installed, "prettier")
-            table.insert(opts.ensure_installed, "ruff")
+            table.insert(opts.ensure_installed, "prettierd")
             table.insert(opts.ensure_installed, "isort")
             table.insert(opts.ensure_installed, "black")
             table.insert(opts.ensure_installed, "codespell")

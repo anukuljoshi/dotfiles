@@ -105,6 +105,11 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# load custom bash
+if [ -f ~/.bash_aj ]; then
+    . ~/.bash_aj
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -116,32 +121,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# load nvm
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-# modify terminal prompt using starship
-eval "$(starship init bash)"
-LS_COLORS+=':ow=01;33'
-
-# load .bash_aliases
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
-# cargo
-if [ -f "$HOME/.cargo/env" ]; then
-. "$HOME/.cargo/env"
-fi
-
-# fzf
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/applications/nvim:$PATH
 
-# ignore is wsl
-if ! [[ $(grep -i Microsoft /proc/version) ]]; then
-    export LC_ALL=en_IN.UTF-8
-    export LANG=en_IN.UTF-8
-fi

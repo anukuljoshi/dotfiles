@@ -32,6 +32,9 @@ return {
             --  you can enable this
             -- { 'nvim-tree/nvim-web-devicons' }
         },
+        keys = function()
+            return {}
+        end,
         config = function()
             -- Telescope is a fuzzy finder that comes with a lot of different things that
             -- it can fuzzy find! It's more than just a "file finder", it can search
@@ -78,7 +81,6 @@ return {
                 pickers = {
                     buffers = {
                         show_all_buffers = true,
-                        -- sort_lastused = true,
                         sort_mru = true,
                         theme = "dropdown",
                         winblend = 0,

@@ -129,6 +129,11 @@ vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 
 vim.keymap.set("n", "<leader>=", "gg=G", { desc = "indent file" })
 
+-- delete marks
+vim.keymap.set("n", "<leader>dm", "<Cmd>delmarks a-z<CR>")
+vim.keymap.set("n", "<leader>dM", "<Cmd>delm! | delm A-Z0-9<CR>")
+
+
 -- lazyvim keymaps
 
 local map = vim.keymap.set

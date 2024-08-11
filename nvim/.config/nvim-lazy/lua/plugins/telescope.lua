@@ -116,13 +116,14 @@ return {
             vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "[F]ind [K]eymaps" })
             vim.keymap.set("n", "<leader>ft", builtin.builtin, { desc = "[F]ind [S]elect Telescope" })
             vim.keymap.set("n", "<leader>fr", builtin.resume, { desc = "[F]ind [R]esume" })
+            vim.keymap.set("n", "<leader>fs", builtin.lsp_document_symbols, { desc = "[F]ind [R]esume" })
             vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
 
             -- git
             vim.keymap.set("n", "<leader>gg", builtin.git_status, { desc = "find [G]it [S]tatus" })
             vim.keymap.set("n", "<leader>gf", builtin.git_files, { desc = "find [G]it [F]iles" })
-            vim.keymap.set("n", "<leader>gc", builtin.git_bcommits, { desc = "Search [G]it [C]ommits for Buffer" })
-            vim.keymap.set("n", "<leader>gC", builtin.git_commits, { desc = "Search [G]it [C]ommits" })
+            vim.keymap.set("n", "<leader>gc", builtin.git_bcommits, { desc = "Search [G]it [C]omits for Buffer" })
+            vim.keymap.set("n", "<leader>gC", builtin.git_commits, { desc = "Search [G]it [C]omits" })
             vim.keymap.set("n", "<leader>gb", builtin.git_branches, { desc = "Search [G]it [B]ranches" })
             vim.keymap.set("n", "<leader>gs", builtin.git_stash, { desc = "Search [G]it [S]tash list" })
 

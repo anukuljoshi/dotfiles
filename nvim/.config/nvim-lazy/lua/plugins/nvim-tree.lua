@@ -47,6 +47,10 @@ return {
                     prefix = "[FILTER]: ",
                     always_show_folders = false, -- Turn into false from true by default
                 },
+                git = {
+                    enable = true,
+                    ignore = false,
+                }
             })
 
             -- workaround when using sessions

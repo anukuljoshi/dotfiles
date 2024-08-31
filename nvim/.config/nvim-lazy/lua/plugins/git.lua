@@ -1,43 +1,43 @@
 return {
 
-    -- {
-    --     "NeogitOrg/neogit",
-    --     dependencies = {
-    --         "nvim-lua/plenary.nvim", -- required
-    --         "sindrets/diffview.nvim", -- optional - Diff integration
-    --
-    --         -- Only one of these is needed, not both.
-    --         "nvim-telescope/telescope.nvim", -- optional
-    --     },
-    --     config = function()
-    --         local neogit = require("neogit")
-    --         neogit.setup({
-    --             commit_editor = {
-    --                 kind = "split",
-    --                 show_staged_diff = false,
-    --                 -- Accepted values:
-    --                 -- "split" to show the staged diff below the commit editor
-    --                 -- "vsplit" to show it to the right
-    --                 -- "split_above" Like :top split
-    --                 -- "vsplit_left" like :vsplit, but open to the left
-    --                 -- "auto" "vsplit" if window would have 80 cols, otherwise "split"
-    --                 staged_diff_split_kind = "vsplit",
-    --             },
-    --         })
-    --
-    --         vim.keymap.set("n", "<leader>hv", function()
-    --             neogit.open({ kind = "vsplit" })
-    --         end, {
-    --             desc = "Open Neogit in vertical split",
-    --         })
-    --
-    --         vim.keymap.set("n", "<leader>hc", function()
-    --             neogit.open({ "commit" })
-    --         end, {
-    --             desc = "Open Neogit for commit",
-    --         })
-    --     end,
-    -- },
+    {
+        "NeogitOrg/neogit",
+        dependencies = {
+            "nvim-lua/plenary.nvim", -- required
+            "sindrets/diffview.nvim", -- optional - Diff integration
+
+            -- Only one of these is needed, not both.
+            "nvim-telescope/telescope.nvim", -- optional
+        },
+        config = function()
+            local neogit = require("neogit")
+            neogit.setup({
+                commit_editor = {
+                    kind = "split",
+                    show_staged_diff = false,
+                    -- Accepted values:
+                    -- "split" to show the staged diff below the commit editor
+                    -- "vsplit" to show it to the right
+                    -- "split_above" Like :top split
+                    -- "vsplit_left" like :vsplit, but open to the left
+                    -- "auto" "vsplit" if window would have 80 cols, otherwise "split"
+                    staged_diff_split_kind = "vsplit",
+                },
+            })
+
+            vim.keymap.set("n", "<leader>hv", function()
+                neogit.open({ kind = "vsplit" })
+            end, {
+                desc = "Open Neogit in vertical split",
+            })
+
+            vim.keymap.set("n", "<leader>hc", function()
+                neogit.open({ "commit" })
+            end, {
+                desc = "Open Neogit for commit",
+            })
+        end,
+    },
 
     {
         -- git

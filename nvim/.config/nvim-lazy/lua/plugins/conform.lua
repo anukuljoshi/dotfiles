@@ -7,7 +7,6 @@ return {
             table.insert(opts.ensure_installed, "eslint_d")
             table.insert(opts.ensure_installed, "typescript-language-server")
             table.insert(opts.ensure_installed, "pyright")
-            table.insert(opts.ensure_installed, "ruff-lsp")
             table.insert(opts.ensure_installed, "ruff")
             table.insert(opts.ensure_installed, "gopls")
 

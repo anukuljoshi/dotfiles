@@ -38,7 +38,7 @@ vim.opt.smartcase = true
 vim.opt.signcolumn = "yes"
 
 -- color 80 char column
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "120"
 
 -- Decrease update time
 vim.opt.updatetime = 250
@@ -75,7 +75,7 @@ vim.opt.shiftwidth = 4 -- num:  Size of an indent
 vim.opt.softtabstop = 4 -- num:  Number of spaces tabs count for in insert mode
 vim.opt.tabstop = 4 -- num:  Number of spaces tabs count for
 
-vim.opt.spell = true
+vim.opt.spell = false
 
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 

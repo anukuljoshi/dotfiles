@@ -133,10 +133,20 @@ vim.keymap.set("n", "<leader>=", "gg=G", { desc = "indent file" })
 vim.keymap.set("n", "<leader>dm", "<Cmd>delmarks a-z<CR>")
 vim.keymap.set("n", "<leader>dM", "<Cmd>delm! | delm A-Z0-9<CR>")
 
+-- toggle spell checker
+local function toggle_spell()
+    if vim.g.enable_spelunker_vim == nil then
+        vim.g.enable_spelunker_vim = 0
+    end
+    if vim.g.enable_spelunker_vim == 1 then
+        vim.g.enable_spelunker_vim = 0
+    else
+        vim.g.enable_spelunker_vim = 1
+    end
+end
+vim.keymap.set("n", "<leader>sp", toggle_spell, { desc = "Toggle Spell Checker" })
 
 -- lazyvim keymaps
-
-local map = vim.keymap.set
 
 -- Move Lines
 vim.keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
@@ -174,27 +184,25 @@ if vim.lsp.inlay_hint then
     LazyVim.toggle.map("<leader>uh", LazyVim.toggle.inlay_hints)
 end
 
--- lazygit
-vim.keymap.set("n", "<leader>lg", function()
-    LazyVim.lazygit({ cwd = LazyVim.root.git() })
-end, { desc = "Lazygit (Root Dir)" })
-vim.keymap.set("n", "<leader>lG", function()
-    LazyVim.lazygit()
-end, { desc = "Lazygit (cwd)" })
-vim.keymap.set("n", "<leader>lb", LazyVim.lazygit.blame_line, { desc = "Git Blame Line" })
-vim.keymap.set("n", "<leader>lB", LazyVim.lazygit.browse, { desc = "Git Browse" })
-
-vim.keymap.set("n", "<leader>lf", function()
-    local git_path = vim.api.nvim_buf_get_name(0)
-    LazyVim.lazygit({ args = { "-f", vim.trim(git_path) } })
-end, { desc = "Lazygit Current File History" })
-
-vim.keymap.set("n", "<leader>ll", function()
-    LazyVim.lazygit({ args = { "log" }, cwd = LazyVim.root.git() })
-end, { desc = "Lazygit Log" })
-vim.keymap.set("n", "<leader>lL", function()
-    LazyVim.lazygit({ args = { "log" } })
-end, { desc = "Lazygit Log (cwd)" })
+-- -- lazygit
+-- vim.keymap.set("n", "<leader>lg", function()
+--     LazyVim.lazygit({ cwd = LazyVim.root.git() })
+-- end, { desc = "Lazygit (Root Dir)" })
+-- vim.keymap.set("n", "<leader>lG", function()
+--     LazyVim.lazygit()
+-- end, { desc = "Lazygit (cwd)" })
+-- vim.keymap.set("n", "<leader>lb", LazyVim.lazygit.blame_line, { desc = "Git Blame Line" })
+-- vim.keymap.set("n", "<leader>lB", LazyVim.lazygit.browse, { desc = "Git Browse" })
+-- vim.keymap.set("n", "<leader>lf", function()
+--     local git_path = vim.api.nvim_buf_get_name(0)
+--     LazyVim.lazygit({ args = { "-f", vim.trim(git_path) } })
+-- end, { desc = "Lazygit Current File History" })
+-- vim.keymap.set("n", "<leader>ll", function()
+--     LazyVim.lazygit({ args = { "log" }, cwd = LazyVim.root.git() })
+-- end, { desc = "Lazygit Log" })
+-- vim.keymap.set("n", "<leader>lL", function()
+--     LazyVim.lazygit({ args = { "log" } })
+-- end, { desc = "Lazygit Log (cwd)" })
 
 -- highlights under cursor
 vim.keymap.set("n", "<leader>ti", vim.show_pos, { desc = "Inspect Pos" })

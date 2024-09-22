@@ -56,7 +56,7 @@ require("lazy").setup({
 -- LSP setup
 local lspconfig = require("lspconfig")
 
-lspconfig["tsserver"].setup({
+lspconfig["ts_ls"].setup({
     on_attach = function(_client, buffer)
         local function goto_source_definition()
             local position_params = vim.lsp.util.make_position_params()

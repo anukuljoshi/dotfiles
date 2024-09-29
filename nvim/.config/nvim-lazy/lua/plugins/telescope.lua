@@ -53,21 +53,28 @@ return {
                             preview_width = 0.5,
                         },
                     },
+                    path_display = {
+                        filename_first = {
+                            reverse_directories = true
+                        }
+                    },
                     mappings = {
                         i = { ["<c-enter>"] = "to_fuzzy_refine" },
+                        n = {
+                            ["q"] = require("telescope.actions").close,
+                        },
                     },
                 },
                 pickers = {
                     buffers = {
+                        initial_mode = "normal",
                         show_all_buffers = true,
                         sort_mru = true,
-                        theme = "dropdown",
+                        theme = "ivy",
+                        layout_config = { height = 20 },
                         winblend = 0,
-                        previewer = false,
+                        previewer = true,
                         mappings = {
-                            i = {
-                                ["<c-d>"] = "delete_buffer",
-                            },
                             n = {
                                 ["dd"] = "delete_buffer",
                             },

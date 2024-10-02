@@ -123,4 +123,5 @@ fi
 
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/applications/nvim:$PATH
+export PATH=$HOME/applications/:$PATH
 

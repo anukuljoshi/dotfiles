@@ -9,9 +9,18 @@ return {
             "MunifTanjim/nui.nvim",
         },
         config = {
+            close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
             window = {
                 position = "right",
                 width = 40,
+            },
+            filesystem = {
+                filtered_items = {
+                    visible = false, -- when true, they will just be displayed differently than normal items
+                    hide_dotfiles = false,
+                    hide_gitignored = false,
+                    hide_hidden = false, -- only works on Windows for hidden files/directories
+                },
             },
             mappings = {
             },

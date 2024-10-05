@@ -67,7 +67,7 @@ return {
                 },
                 pickers = {
                     buffers = {
-                        initial_mode = "normal",
+                        initial_mode = "insert",
                         show_all_buffers = true,
                         sort_mru = true,
                         theme = "ivy",

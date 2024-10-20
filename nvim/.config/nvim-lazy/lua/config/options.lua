@@ -39,6 +39,8 @@ vim.opt.signcolumn = "yes"
 
 -- color 80 char column
 vim.opt.colorcolumn = "120"
+-- Set termguicolors
+vim.opt.termguicolors = true
 
 -- Decrease update time
 vim.opt.updatetime = 250

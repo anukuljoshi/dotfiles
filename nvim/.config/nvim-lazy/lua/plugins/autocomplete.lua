@@ -1,5 +1,8 @@
 return {
     "hrsh7th/nvim-cmp",
+    dependencies = {
+        "hrsh7th/cmp-nvim-lsp-signature-help",
+    },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
         local has_words_before = function()
@@ -8,13 +11,15 @@ return {
             return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
         end
 
+        table.insert(opts.sources, { name = "nvim_lsp_signature_help" })
+
         local cmp = require("cmp")
 
         opts.mapping = vim.tbl_extend("force", opts.mapping, {
             -- Select the [n]ext item
-            ['<C-n>'] = cmp.mapping.select_next_item(),
+            ["<C-n>"] = cmp.mapping.select_next_item(),
             -- Select the [p]revious item
-            ['<C-p>'] = cmp.mapping.select_prev_item(),
+            ["<C-p>"] = cmp.mapping.select_prev_item(),
 
             ["<Tab>"] = cmp.mapping(function(fallback)
                 if cmp.visible() then

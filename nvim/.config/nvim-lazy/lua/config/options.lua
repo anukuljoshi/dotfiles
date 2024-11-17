@@ -38,7 +38,7 @@ vim.opt.smartcase = true
 vim.opt.signcolumn = "yes"
 
 -- color 80 char column
-vim.opt.colorcolumn = "120"
+vim.opt.colorcolumn = "80"
 -- Set termguicolors
 vim.opt.termguicolors = true
 

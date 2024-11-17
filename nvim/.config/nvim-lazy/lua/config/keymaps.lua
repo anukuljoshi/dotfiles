@@ -161,49 +161,9 @@ vim.keymap.set("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 vim.keymap.set("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 vim.keymap.set("n", "[b", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 vim.keymap.set("n", "]b", "<cmd>bnext<cr>", { desc = "Next Buffer" })
-vim.keymap.set("n", "<leader>bd", LazyVim.ui.bufremove, { desc = "Delete Buffer" })
 vim.keymap.set("n", "<leader>o", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 
 -- formatting
 vim.keymap.set({ "n", "v" }, "<leader>i", function()
     LazyVim.format({ force = true })
 end, { desc = "Format" })
-
--- toggle options
-LazyVim.toggle.map("<leader>uf", LazyVim.toggle.format())
-LazyVim.toggle.map("<leader>us", LazyVim.toggle("spell", { name = "Spelling" }))
-LazyVim.toggle.map("<leader>uw", LazyVim.toggle("wrap", { name = "Wrap" }))
-LazyVim.toggle.map("<leader>ud", LazyVim.toggle.diagnostics)
-LazyVim.toggle.map("<leader>ul", LazyVim.toggle.number)
-LazyVim.toggle.map(
-    "<leader>uc",
-    LazyVim.toggle("conceallevel", { values = { 0, vim.o.conceallevel > 0 and vim.o.conceallevel or 2 } })
-)
-LazyVim.toggle.map("<leader>ub", LazyVim.toggle("background", { values = { "light", "dark" }, name = "Background" }))
-if vim.lsp.inlay_hint then
-    LazyVim.toggle.map("<leader>uh", LazyVim.toggle.inlay_hints)
-end
-
--- -- lazygit
--- vim.keymap.set("n", "<leader>lg", function()
---     LazyVim.lazygit({ cwd = LazyVim.root.git() })
--- end, { desc = "Lazygit (Root Dir)" })
--- vim.keymap.set("n", "<leader>lG", function()
---     LazyVim.lazygit()
--- end, { desc = "Lazygit (cwd)" })
--- vim.keymap.set("n", "<leader>lb", LazyVim.lazygit.blame_line, { desc = "Git Blame Line" })
--- vim.keymap.set("n", "<leader>lB", LazyVim.lazygit.browse, { desc = "Git Browse" })
--- vim.keymap.set("n", "<leader>lf", function()
---     local git_path = vim.api.nvim_buf_get_name(0)
---     LazyVim.lazygit({ args = { "-f", vim.trim(git_path) } })
--- end, { desc = "Lazygit Current File History" })
--- vim.keymap.set("n", "<leader>ll", function()
---     LazyVim.lazygit({ args = { "log" }, cwd = LazyVim.root.git() })
--- end, { desc = "Lazygit Log" })
--- vim.keymap.set("n", "<leader>lL", function()
---     LazyVim.lazygit({ args = { "log" } })
--- end, { desc = "Lazygit Log (cwd)" })
-
--- highlights under cursor
-vim.keymap.set("n", "<leader>ti", vim.show_pos, { desc = "Inspect Pos" })
-vim.keymap.set("n", "<leader>tI", "<cmd>InspectTree<cr>", { desc = "Inspect Tree" })

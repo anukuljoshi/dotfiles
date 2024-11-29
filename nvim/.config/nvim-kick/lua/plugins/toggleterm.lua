@@ -16,34 +16,9 @@ return {
                     -- see :h nvim_open_win for details on borders however
                     -- the "curved" border is a custom border type
                     -- not natively supported but implemented in this plugin.
-                    border = "single"
+                    border = "curved"
                 },
             })
-            -- open terminal
-            vim.api.nvim_set_keymap(
-                "n",
-                "<leader>th",
-                "<cmd>ToggleTerm direction=horizontal<CR>",
-                {noremap = true, silent = true}
-            )
-            vim.api.nvim_set_keymap(
-                "n",
-                "<leader>tv",
-                "<cmd>ToggleTerm size=60 direction=vertical<CR>",
-                {noremap = true, silent = true}
-            )
-            vim.api.nvim_set_keymap(
-                "n",
-                "<leader>tf",
-                "<cmd>ToggleTerm direction=float<CR>",
-                {noremap = true, silent = true}
-            )
-            vim.api.nvim_set_keymap(
-                "n",
-                "<leader>tb",
-                "<cmd>ToggleTerm direction=tab<CR>",
-                {noremap = true, silent = true}
-            )
         end
     },
 

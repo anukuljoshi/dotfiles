@@ -27,6 +27,12 @@ return {
                     ["l"] = "open",
                     ["h"] = "close_node",
                     ["<space>"] = "none",
+                    ["y"] = function(state)
+                        local node = state.tree:get_node()
+                        local filename = node.name
+                        vim.fn.setreg("+", filename, "n")
+                        print("Copied", filename, "to Clipboard")
+                    end,
                     ["Y"] = {
                         function(state)
                             local node = state.tree:get_node()

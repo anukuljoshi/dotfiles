@@ -3,6 +3,12 @@ return {
     "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 
     {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        config = true,
+    },
+
+    {
         "smoka7/hop.nvim",
         version = "*",
         opts = {},
@@ -49,5 +55,21 @@ return {
                 -- Configuration here, or leave empty to use defaults
             })
         end,
+    },
+
+    {
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        },
+    },
+
+    {
+        "chentoast/marks.nvim",
+        event = "VeryLazy",
+        opts = {},
     },
 }

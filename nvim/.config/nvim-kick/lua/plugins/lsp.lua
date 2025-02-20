@@ -111,6 +111,14 @@ return {
                     end,
                 },
             })
+
+            require("lspconfig").gopls.setup({
+                settings = {
+                    gopls = {
+                        gofumpt = true,
+                    },
+                },
+            })
         end,
     },
 }

@@ -8,7 +8,13 @@ return {
                 formatters_by_ft = {
                     lua = { "stylua" },
                     -- Conform will run multiple formatters sequentially
-                    go = { "gopls" },
+                    go = function(bufnr)
+                        if require("conform").get_formatter_info("gofumpt", bufnr).available then
+                            return { "gofumpt" }
+                        else
+                            return { "gopls" }
+                        end
+                    end,
                     -- You can customize some of the format options for the filetype (:help conform.format)
                     rust = { "rustfmt", lsp_format = "fallback" },
                     -- Conform will run the first available formatter

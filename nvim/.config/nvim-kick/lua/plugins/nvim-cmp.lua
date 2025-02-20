@@ -47,7 +47,7 @@ return {
                 completion = {
                     completeopt = "menu,menuone,noselect",
                 },
-
+                preselect = cmp.PreselectMode.None,
                 -- Key mappings for autocompletion
                 mapping = cmp.mapping.preset.insert({
                     ["<C-n>"] = cmp.mapping.select_next_item(),
